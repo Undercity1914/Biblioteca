@@ -1,14 +1,12 @@
 from Person import Person
 from Book import Book
+from typing import List
 
 class Author(Person):
     def __init__(self, name=None, age=None, cpf=None, booksWritten=None):
-        if all([name, age, cpf, booksWritten]):
-            super().__init__(name, age, cpf)
-            self.__booksWritten = booksWritten
-        else:
-            super().__init__()
-            self.__booksWritten = []
+        
+        super().__init__(name, age, cpf)
+        self.__booksWritten = booksWritten if booksWritten is not None else []
     
     @property
     def booksWritten(self):
@@ -37,4 +35,17 @@ class Author(Person):
             book.fill()
             self.booksWritten.append(book)
             more = str(input("Você deseja adicionar mais livros?[s/n] "))
+        
+    def toDict(self) -> None:
+        return{
+            'name': self.name,
+            'age': self.age,
+            'cpf': self.cpf,
+            'booksWritten': [book.toDict() for book in self.booksWritten]
+        }
+    
+    def fromDict(data):
+        author = Author(name=data['name'], age=data['age'], cpf=data['cpf'])
+        author.booksWritten = [Book.fromDict(bookData) for bookData in data['booksWritten']]
+        return author
         

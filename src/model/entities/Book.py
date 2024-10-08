@@ -44,3 +44,14 @@ Publication Year: {self.publicationYear}
         self.isbn = str(input("ISBN: "))
         self.publicationYear = str(input("Publication Year: "))
     
+    def toDict(self):
+        return{
+            'title': self.title,
+            'isbn': self.isbn,
+            'publicationYear': self.publicationYear
+        }
+    
+    def fromDict(data):
+        book = Book(title=data['title'], isbn=data['isbn'], publicationYear=data['publicationYear'])
+        return book
+    

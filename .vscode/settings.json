@@ -1,6 +1,7 @@
 {
     "python.analysis.extraPaths": [
         "./src/model/entities",
-        "./src/model/file"
+        "./src/model/file",
+        "./src/model/DAO"
     ]
 }

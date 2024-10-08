@@ -1,0 +1,29 @@
+[
+    {
+        "name": "J K Rolling",
+        "age": "59",
+        "cpf": "14734124666",
+        "booksWritten": [
+            {
+                "title": "harry potter e a pedra filosofal",
+                "isbn": "782367126312",
+                "publicationYear": "1997"
+            },
+            {
+                "title": "harry potter e a camara secreta",
+                "isbn": "782367126312",
+                "publicationYear": "2002"
+            },
+            {
+                "title": "harry potter e o prisioneiro de azkaban",
+                "isbn": "782367126312",
+                "publicationYear": "2005"
+            },
+            {
+                "title": "harry potter e a ordem da fenix",
+                "isbn": "782367126312",
+                "publicationYear": "2007"
+            }
+        ]
+    }
+]

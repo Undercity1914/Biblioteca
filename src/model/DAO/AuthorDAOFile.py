@@ -22,13 +22,14 @@ class AuthorDAOFile(IDAO):
     def authors(self, authors):
         self.__authors = authors
     
-    def save(self, author):
-        if isinstance(Author, author):
-            authors = self.findAll()
-            self.authors.append(author)
+    def save(self, author: Author) -> None:
+        authors = self.findAll() if self.findAll() is not None else []
+        authors.append(author)
+        self.authors = authors
 
-            jsonData = self.__serializer.toFile(authors)
-            self.__filePersistence.saveToFile(jsonData, self.__patchFile)
+        jsonData = self.__serializer.toFile(authors)
+        self.__filePersistence.saveToFile(jsonData, self.__patchFile)
+            
 
     def update(self, code, obj):
         pass
@@ -56,3 +57,5 @@ class AuthorDAOFile(IDAO):
     def findAll(self):
         jsonData = self.__filePersistence.loadFromFile(self.__patchFile)
         return self.__serializer.fromFile(jsonData)
+    
+    
