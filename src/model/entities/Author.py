@@ -9,11 +9,11 @@ class Author(Person):
         self.__booksWritten = booksWritten if booksWritten is not None else []
     
     @property
-    def booksWritten(self):
+    def booksWritten(self) -> List[Book]:
         return self.__booksWritten
     
     @booksWritten.setter
-    def booksWritten(self, booksWritten):
+    def booksWritten(self, booksWritten) -> None:
         self.__booksWritten = booksWritten
 
     def print(self):
@@ -25,18 +25,19 @@ class Author(Person):
             print(c.print())
     
     def fill(self):
+        bookList = []
         super().fill()
-        more = 's'
-        book = Book()
+        p = ''
 
-        print("------------Book fill---------------")
-        
-        while more == 's':
+        print('-------------Book Fill--------------')
+        while p is not 'n':
+            book = Book()
             book.fill()
-            self.booksWritten.append(book)
-            more = str(input("Você deseja adicionar mais livros?[s/n] "))
+            bookList.append(book)
         
-    def toDict(self) -> None:
+        self.bookList = bookList
+        
+    def toDict(self) -> dict:
         return{
             'name': self.name,
             'age': self.age,

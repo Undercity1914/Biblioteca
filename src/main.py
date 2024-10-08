@@ -5,14 +5,23 @@ sys.path.append("C:\\Users\\marco\\OneDrive\\Documentos\\PadraoMVC_Python\\src\\
 
 from AuthorDAOFile import AuthorDAOFile
 from Author import Author
+from User import User
+from UserDAOFile import UserDAOFile
 
-archive = AuthorDAOFile("AuthorList.json")
-
-print(archive.findAll())
+authorArchive = AuthorDAOFile("AuthorList.json")
 
 author = Author()
 
-authors = archive.findAll()
+authors = authorArchive.findAll()
 
 for author in authors:
     author.print()
+
+userArchive = UserDAOFile("UserList.json")
+
+user = User()
+
+users = userArchive.findAll()
+
+for user in users:
+    user.print()

@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Carlos Silva",
+        "age": "34",
+        "cpf": "12345678901",
+        "bookList": [
+            {
+                "title": "A Arte da Guerra",
+                "isbn": "9788572322341",
+                "publicationYear": "2010"
+            },
+            {
+                "title": "O Pequeno Príncipe",
+                "isbn": "9788573023457",
+                "publicationYear": "2005"
+            }
+        ]
+    },
+    {
+        "name": "Mariana Oliveira",
+        "age": "28",
+        "cpf": "98765432100",
+        "bookList": [
+            {
+                "title": "Orgulho e Preconceito",
+                "isbn": "9788595080604",
+                "publicationYear": "2018"
+            },
+            {
+                "title": "Dom Casmurro",
+                "isbn": "9788508155313",
+                "publicationYear": "2003"
+            }
+        ]
+    },
+    {
+        "name": "João Pereira",
+        "age": "40",
+        "cpf": "45678912345",
+        "bookList": [
+            {
+                "title": "1984",
+                "isbn": "9780451524935",
+                "publicationYear": "2017"
+            },
+            {
+                "title": "A Revolução dos Bichos",
+                "isbn": "9780451526342",
+                "publicationYear": "2015"
+            }
+        ]
+    },
+    {
+        "name": "Ana Costa",
+        "age": "22",
+        "cpf": "11223344556",
+        "bookList": [
+            {
+                "title": "O Hobbit",
+                "isbn": "9780345339683",
+                "publicationYear": "2012"
+            }
+        ]
+    }
+]
