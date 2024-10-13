@@ -4,6 +4,7 @@
         "./src/model/file",
         "./src/model/DAO",
         "./src/model/Exceptions",
-        "./src/model/DataValidation"
+        "./src/model/DataValidation",
+        "./src/connection"
     ]
 }
