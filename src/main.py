@@ -4,13 +4,14 @@ sys.path.append("C:\\Users\\marco\\OneDrive\\Documentos\\PadraoMVC_Python\\src\\
 sys.path.append("C:\\Users\\marco\\OneDrive\\Documentos\\PadraoMVC_Python\\src\\model\\entities")
 sys.path.append("C:\\Users\\marco\\OneDrive\\Documentos\\PadraoMVC_Python\\src\\connection")
 
+from BookJSONSerializer import BookJSONSerializer
 from AuthorDAOFile import AuthorDAOFile
 from Author import Author
 from User import User
 from SQLConnector import SQLConnector
 from UserDAOFile import UserDAOFile
 
-'''authorArchive = AuthorDAOFile("AuthorList.json")
+authorArchive = AuthorDAOFile("AuthorList.json")
 
 author = Author()
 
@@ -26,7 +27,7 @@ user = User()
 users = userArchive.findAll()
 
 for user in users:
-    user.print()'''
+    user.print()
 
-connector = SQLConnector("dataBase.db")
-connector.closeConnection()
+'''connector = SQLConnector("dataBase.db")
+connector.closeConnection()'''

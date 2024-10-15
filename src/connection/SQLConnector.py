@@ -16,7 +16,7 @@ class SQLConnector:
         connection = None
 
         try:
-            connection = sqlite3.connect(dataBase)
+            connection = sqlite3.connect(dataBase, check_same_thread=False)
         
         except Error as e:
             print(e)
