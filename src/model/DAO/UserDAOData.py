@@ -1,18 +1,16 @@
+from User import User
 import sqlite3
 from BookJSONSerializer import BookJSONSerializer
-from Author import Author
 from IDAO import IDAO
 
-class Author(IDAO):
-    
-
+class UserDAOData(IDAO):
     def __init__(self, connection):
         super().__init__()
         self.connection = connection
 
-    def save(self, author: Author):
+    def save(self, user: User):
         sql = '''
-INSERT INTO author (name, cpf, age, bookList) VALUES (?, ?, ?, ?)
+INSERT INTO user (name, cpf, age, bookList) VALUES (?, ?, ?, ?)
 '''
 
         serializer = BookJSONSerializer()
@@ -20,10 +18,10 @@ INSERT INTO author (name, cpf, age, bookList) VALUES (?, ?, ?, ?)
         try:
             cursor = self.connection.cursor()
             cursor.execute(sql, (
-                author.name,
-                author.age,
-                author.cpf,
-                serializer.toFile(author.booksWritten)
+                user.name,
+                user.age,
+                user.cpf,
+                serializer.toFile(user.booksWritten)
             ))
 
             self.connection.commit()
@@ -31,9 +29,9 @@ INSERT INTO author (name, cpf, age, bookList) VALUES (?, ?, ?, ?)
         except sqlite3.Error as e:
             print(e)
 
-    def update(self, cpf, author: Author):
+    def update(self, cpf, user: User):
         sql = '''
-UPDATE author 
+UPDATE user 
 SET name = ?, age = ?, bookList = ?
 WHERE cpf = ?
 '''
@@ -43,10 +41,10 @@ WHERE cpf = ?
         try:
             cursor = self.connection.cursor()
             cursor.execute(sql, (
-                author.name,
-                author.age,
-                author.cpf,
-                serializer.toFile(author.booksWritten),
+                user.name,
+                user.age,
+                user.cpf,
+                serializer.toFile(user.booksWritten),
                 cpf                
             ))
 
@@ -56,7 +54,7 @@ WHERE cpf = ?
             print(e)
 
     def remove(self, cpf):
-        sql = 'DELETE FROM author WHERE cpf = ?'
+        sql = 'DELETE FROM user WHERE cpf = ?'
 
         try:
 
@@ -68,7 +66,7 @@ WHERE cpf = ?
             print(e)
 
     def find(self, cpf):
-        sql = 'SELECT * FROM author WHERE cpf = ?'
+        sql = 'SELECT * FROM user WHERE cpf = ?'
         serializer = BookJSONSerializer()
 
         try:
@@ -78,7 +76,7 @@ WHERE cpf = ?
             row = cursor.fetchone()
 
             if row:
-                return Author(
+                return User(
                     row[0],
                     row[1],
                     row[2],
@@ -88,11 +86,9 @@ WHERE cpf = ?
         except sqlite3.Error as e:
             print(e)
 
-        return None
-
     def findAll(self):
-        sql = 'SELECT * FROM author'
-        auhtors = []
+        sql = 'SELECT * FROM user'
+        users = []
         serializer = BookJSONSerializer()
 
         try:
@@ -102,7 +98,7 @@ WHERE cpf = ?
             rows = cursor.fetchall()
 
             for row in rows:
-                auhtors.append(Author(
+                users.append(User(
                     row[0],
                     row[1],
                     row[2],
@@ -112,4 +108,4 @@ WHERE cpf = ?
         except sqlite3.Error as e:
             print(e)
 
-        return auhtors
+        return users
