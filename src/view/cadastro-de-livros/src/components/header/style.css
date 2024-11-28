@@ -18,6 +18,13 @@
     display: block;
 }
 
+.header-text-bar {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
 .header-bar {
     align-items: center;  
     padding: 10px 20px;
@@ -28,4 +35,15 @@
     margin: 1%;
     margin-top: 3.5%;
     margin-right: 4%;
+    display: flex;
+}
+
+.header-search-bar {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 0px;
+    cursor: auto;
+    margin-left: 5px;
+    background-color: #d9d9d9;
 }
