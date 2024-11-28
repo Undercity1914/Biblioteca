@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request
 sys.path.append("C:\\Users\\marco\\OneDrive\\Documentos\\PadraoMVC_Python\\src\\connection")
 from SQLConnector import SQLConnector
 
-connection = SQLConnector("dataBse.db")
+connection = SQLConnector("dataBase.db")
 
 app = Flask(__name__)
 
