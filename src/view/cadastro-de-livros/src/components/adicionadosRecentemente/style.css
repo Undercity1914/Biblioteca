@@ -1,0 +1,24 @@
+.add {
+    background-color: #D9D9D9;
+    height: 100vh;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+.add-text {
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 50px;
+    cursor: default;
+}
+
+.add-box {
+    width: 100%;
+    max-width: 90%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: 5%;
+}
