@@ -1,17 +1,15 @@
 import './App.css';
 import './components/header'
-import Header from './components/header/index.js';
-import Add from './components/adicionadosRecentemente/index.js';
+import Home from './components/paginas/home';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <div>
-        <Add/>
-      </div>
-    </div>
-    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

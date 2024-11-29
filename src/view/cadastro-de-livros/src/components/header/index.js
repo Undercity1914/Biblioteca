@@ -1,6 +1,7 @@
 import React from "react";
 import './style.css';
 import search from "../../assets/search.png"
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -11,7 +12,7 @@ const Header = () => {
                 <p>Pessoal</p>
             </div>
             <div class="header-bar">
-                <p class="header-text-bar" style={{marginLeft: "115px", cursor: "default"}}>
+                <p class="header-text-bar" style={{marginLeft: "115px", cursor: "default", marginTop: "15px"}}>
                     Procurar
                 </p>
                 <img src={search} alt="Search" style={{width: "15px", marginLeft: "10px", cursor: "pointer"}}/>
@@ -21,16 +22,16 @@ const Header = () => {
                     onChange={''}
                     class="header-search-bar"
                 />
-                <p class="header-text-bar" style={{marginLeft: "50px", cursor: "pointer"}}>
+                <Link to="/adicionar" class="header-text-bar" style={{marginLeft: "50px", cursor: "pointer", textDecoration: "none", marginTop: "-5px"}}>
                     Adicionar
-                </p>
-                <p class="header-text-bar" style={{marginLeft: "50px", cursor: "pointer"}}>
+                </Link>
+                <Link to="/remover" class="header-text-bar" style={{marginLeft: "50px", cursor: "pointer", textDecoration: "none", marginTop: "-5px"}}>
                     Remover
-                </p>
-                <p class="header-text-bar" style={{marginLeft: "50px", cursor: "pointer"}}>
+                </Link>
+                <Link to="/editar" class="header-text-bar" style={{marginLeft: "50px", cursor: "pointer", textDecoration: "none", marginTop: "-5px"}}>
                     Editar
-                </p>
-                <p class="header-text-bar" style={{marginLeft: "50px", cursor: "pointer"}}>
+                </Link>
+                <p class="header-text-bar" style={{marginLeft: "50px", cursor: "pointer", marginTop: "15px"}}>
                     Outros
                 </p>
             </div>
